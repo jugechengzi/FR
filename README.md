@@ -5,7 +5,10 @@ torch 1.10.2+cu113.
 python 3.7.9.   
 tensorboardx 2.4.   
 tensorboard 2.6.0    
-RTX3090
+RTX3090  
+We suggest you to created a new environment with: conda create -n FR python=3.7.  
+And then conduct: pip install -r requirements.txt
+
 ## Datasets
 Beer Reviews: you can get it from [here](http://people.csail.mit.edu/taolei/beer/). Then place it in the ./data/beer directory.  
 Hotel Reviews: you can get it from [here](https://people.csail.mit.edu/yujia/files/r2a/data.zip). 

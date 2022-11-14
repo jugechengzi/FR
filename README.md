@@ -9,7 +9,9 @@ RTX3090
 We suggest you to created a new environment with: conda create -n FR python=3.7  
 And then conduct: pip install -r requirements.txt
 
-## Datasets
+## Datasets  
+For Beer Reviews, you should first obtain authorization for this dataset from the original author.
+ 
 Beer Reviews: you can get it from [here](http://people.csail.mit.edu/taolei/beer/). Then place it in the ./data/beer directory.  
 Hotel Reviews: you can get it from [here](https://people.csail.mit.edu/yujia/files/r2a/data.zip). 
 Then  find hotel_Location.train, hotel_Location.dev, hotel_Service.train, hotel_Service.dev, hotel_Cleanliness.train, hotel_Cleanliness.dev from data/oracle and put them in the ./data/hotel directory. 

@@ -46,7 +46,7 @@ annotation dataset : recall:0.8700 precision:1.0000 f1-score:0.9305 accuracy:0.8
 The annotation performance: sparsity: 18.4382, precision: 82.9415, recall: 82.6008, f1: 82.7708  
 The last line indicates the overlap between the selected tokens and human-annotated rationales. The penultimate line shows the predictive accuracy on the test set. 
 
-## Testing  
+## Quick Test 
 If you don't have enough GPU resource, we also provide trained models for quick test. Download the models [here](https://drive.google.com/file/d/1jLkLBC5CJxu-M_2yOGi94rGwscofnJVk/view?usp=sharing) and then run test_beer.py and test_hotel.py.
 
 

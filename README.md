@@ -1,6 +1,7 @@
 # FR: Folded Rationalization with a Unified Encoder  
 This repo contains Pytorch implementation of [Folded Rationalization with a Unified Encoder (FR, NeurIPS2022)](https://arxiv.org/abs/2209.08285).    
-If the codes help you, please give us a **star**. Thank you!
+## Star
+If the codes help you, please give us a **star**. Thank you!  
 ## Environments  
 torch 1.10.2+cu113.   
 python 3.7.9.   

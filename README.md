@@ -46,7 +46,7 @@ The last line indicates the overlap between the selected tokens and human-annota
 If you don't have enough GPU resource, we also provide trained models for quick test. Download the models [here](https://drive.google.com/file/d/1jLkLBC5CJxu-M_2yOGi94rGwscofnJVk/view?usp=sharing) and then run test_beer.py and test_hotel.py.
 
 ## Remark  
-Other hyper-parameters will be released after this repository get 10 stars.
+Other hyper-parameters will be released as soon as this repository gets 10 stars.
 
 
 

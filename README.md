@@ -1,9 +1,6 @@
 # FR: Folded Rationalization with a Unified Encoder  
 This repo contains Pytorch implementation of [Folded Rationalization with a Unified Encoder (FR, NeurIPS2022)](https://arxiv.org/abs/2209.08285).    
-## Star
-If the codes help you, please give us a **star**. It plays an important role in encouraging us to open the source codes.  
-If you have any questions, please open an issue or send us an e-mail.  
-Thank you!  
+
 
 
 
@@ -30,6 +27,10 @@ Word embedding: [glove.6B.100d.txt](https://nlp.stanford.edu/projects/glove/). T
 #### Appearance:  
 python run_share_beer.py --lr 0.0001 --batch_size 256 --share 1 --sparsity_percentage 0.15 --sparsity_lambda 10 --continuity_lambda 10 --embedding_dir './data/hotel/embeddings' --embedding_name 'glove.6B.100d.txt' --embedding_dim 100 --epochs 300 --aspect 0  
 
+## Questions
+If you have any questions, just open an issue or send us an e-mail.   
+If the repo helps you, please star it.   
+Thank you!  
 
 ## Result
 You will get a result like "best_dev_epoch=205" at last. Then you need to find the result corresponding to the epoch with number "205".  

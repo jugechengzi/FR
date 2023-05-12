@@ -10,8 +10,9 @@ python 3.7.9.
 tensorboardx 2.4.   
 tensorboard 2.6.0    
 RTX3090  
-We suggest you to created a new environment with: conda create -n FR python=3.7  
-And then conduct: pip install -r requirements.txt
+We suggest you to create a new environment with: conda create -n FR python=3.7    
+Then activate the environment with: conda activate FR  
+And then conduct: pip install -r requirements.txt  
 
 ## Datasets  
 For Beer Reviews, you should first obtain authorization for this dataset from the original author.

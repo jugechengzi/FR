@@ -52,5 +52,19 @@ If you don't have enough GPU resource, we also provide trained models for quick 
 ## Remark  
 Other hyper-parameters will be released as soon as this repository gets 10 stars.
 
+## Citation  
+@inproceedings{NEURIPS2022_2e0bd92a,
+ author = {Liu, Wei and Wang, Haozhao and Wang, Jun and Li, Ruixuan and Yue, Chao and Zhang, YuanKai},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {S. Koyejo and S. Mohamed and A. Agarwal and D. Belgrave and K. Cho and A. Oh},
+ pages = {6954--6966},
+ publisher = {Curran Associates, Inc.},
+ title = {FR: Folded Rationalization with a Unified Encoder},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2022/file/2e0bd92a1d3600d4288df51ac5e6be5f-Paper-Conference.pdf},
+ volume = {35},
+ year = {2022}
+}
+
+
 
 

@@ -88,7 +88,7 @@ def parse():
                         help='Number of training epoch')
     parser.add_argument('--lr',
                         type=float,
-                        default=0.0005,
+                        default=0.0001,
                         help='compliment learning rate [default: 1e-3]')
     parser.add_argument('--sparsity_lambda',
                         type=float,

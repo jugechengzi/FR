@@ -28,7 +28,9 @@ Word embedding: [glove.6B.100d.txt](https://nlp.stanford.edu/projects/glove/). T
 ## Running Example  
 ### Beer
 #### Appearance:  
-python run_share_beer.py --lr 0.0001 --batch_size 256 --share 1 --sparsity_percentage 0.15 --sparsity_lambda 10 --continuity_lambda 10 --embedding_dir './data/hotel/embeddings' --embedding_name 'glove.6B.100d.txt' --embedding_dim 100 --epochs 300 --aspect 0  
+python run_share_beer.py --lr 0.0001 --batch_size 256 --sparsity_percentage 0.15 --sparsity_lambda 10 --continuity_lambda 10 --epochs 300 --aspect 0  
+
+Notes: "sparsity_percentage" corresponds to $\alpha$ in Eq.3. "sparsity_lambda" and "continuity_lambda" correspond to $\lambda_1$ and $\lambda_2$, respectively.
 
 ## Questions
 If you have any questions, just open an issue or send us an e-mail.   

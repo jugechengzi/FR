@@ -337,28 +337,7 @@ class GenEncShareModel(nn.Module):
         logits = self.cls_fc(self.dropout(outputs))
         return logits
 
-    def train_skew(self,inputs,masks,labels):
-        masks_ = masks.unsqueeze(-1)
 
-        labels_=labels.detach().unsqueeze(-1)       #batch*1
-        pos=torch.ones_like(inputs)[:,:10]*labels_
-        neg=-pos+1
-        skew_pad=torch.cat((pos,neg),dim=1)
-        latter=torch.zeros_like(inputs)[:,20:]
-
-        masks_=torch.cat((skew_pad,latter),dim=1).unsqueeze(-1)
-        # (batch_size, seq_length, embedding_dim)
-        embedding = masks_ * self.embedding_layer(inputs)
-        outputs, _ = self.enc(embedding)  # (batch_size, seq_length, hidden_dim)
-        outputs = self.layernorm(outputs)
-        outputs = outputs * masks_ + (1. -
-                                      masks_) * (-1e6)
-        # (batch_size, hidden_dim, seq_length)
-        outputs = torch.transpose(outputs, 1, 2)
-        outputs, _ = torch.max(outputs, axis=2)
-        # shape -- (batch_size, num_classes)
-        logits = self.cls_fc(self.dropout(outputs))
-        return logits
 
 
     def g_skew(self,inputs, masks):

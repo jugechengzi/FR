@@ -3,7 +3,7 @@ This repo contains Pytorch implementation of [Folded Rationalization with a Unif
 
 We would be grateful if you would star this repo before cloning it.
 
-We have provided some tips for you to build your method upon our code: [tips](https://github.com/jugechengzi/FR/blob/main/tips.pdf)
+We have provided some tips for you to build your method on top of our code: [tips](https://github.com/jugechengzi/FR/blob/main/tips.pdf)
 
 
 

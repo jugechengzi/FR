@@ -5,7 +5,7 @@ We would be grateful if you would star this repo before cloning it.
 
 ## Tips for building your own method with our code
 
-We have provided some tips for you to build your method on top of our code: [tips](https://github.com/jugechengzi/FR/blob/main/tips.pdf)
+We have provided some tips for you to better understand our code and build your own method on top of it: [tips](https://github.com/jugechengzi/FR/blob/main/tips.pdf). If you're still having trouble reproducing your code after reading these tips, I'd be happy to set up a video conference to help you.
 
 
 

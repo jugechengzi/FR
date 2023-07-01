@@ -34,7 +34,7 @@ Word embedding: [glove.6B.100d.txt](https://nlp.stanford.edu/projects/glove/). T
 #### Appearance:  
 python run_share_beer.py --lr 0.0001 --batch_size 256 --sparsity_percentage 0.15 --sparsity_lambda 10 --continuity_lambda 10 --epochs 300 --aspect 0  
 
-**_Notes_**: "sparsity_percentage" corresponds to $\alpha$ in Eq.3. "sparsity_lambda" and "continuity_lambda" correspond to $\lambda_1$ and $\lambda_2$, respectively. Hyperparameters on other datasets are in [hyperparameters.txt](https://github.com/jugechengzi/FR/blob/main/hyperparameters.txt).
+**_Notes_**: "sparsity_percentage" corresponds to $\alpha$ in Eq.3. "sparsity_lambda" and "continuity_lambda" correspond to $\lambda_1$ and $\lambda_2$, respectively. 
 
 ## Questions
 If you have any questions, just open an issue or send us an e-mail.   

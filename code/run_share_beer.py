@@ -265,14 +265,5 @@ for epoch in range(args.epochs):
         # validate_annotation_sentence(model, annotation_loader, device)
         # print("Rationale")
         # validate_rationales(model, annotation_loader, device,(writer,epoch))
-        if accuracy>acc_best_dev[-1]:
-            acc_best_dev.append(accuracy)
-            best_dev_epoch.append(epoch)
-            f1_best_dev.append(annotation_results[3])
-        if best_all<annotation_results[3]:
-            best_all=annotation_results[3]
-    args.tau[0]*=args.taudecay
-print(best_all)
-print('best_dev_epoch={}'.format(best_dev_epoch[-1]))
 torch.save(model,'./trained_models/beer_{}.pkl'.format(args.aspect))
 

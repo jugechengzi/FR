@@ -258,6 +258,10 @@ class AttentionGenerator(nn.Module):
 
 class GenEncShareModel(nn.Module):
 
+    """
+    FR
+    """
+
     def __init__(self, args):
         super(GenEncShareModel, self).__init__()
         self.args = args
@@ -353,6 +357,9 @@ class GenEncShareModel(nn.Module):
 
 
 class GenEncNoShareModel(nn.Module):
+    """
+    RNP
+    """
 
     def __init__(self, args):
         super(GenEncNoShareModel, self).__init__()

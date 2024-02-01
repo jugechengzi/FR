@@ -27,7 +27,7 @@ class HotelData(Dataset):
 
     def _read_csv(self, file_path, quotechar=None):
         """Reads a tab separated value file."""
-        with open(file_path, "rt") as f:
+        with open(file_path, "rt", encoding='utf-8') as f:
             reader = csv.reader(f, delimiter="\t", quotechar=quotechar)
             lines = []
             for line in reader:

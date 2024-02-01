@@ -20,6 +20,9 @@ We suggest you to create a new environment with: conda create -n FR python=3.7
 Then activate the environment with: conda activate FR  
 And then conduct: pip install -r requirements.txt  
 
+Due to different versions of torch, you may need to replace "cls_loss = args.cls_lambda * F.cross_entropy(forward_logit, labels)" with "cls_loss = args.cls_lambda * F.cross_entropy(forward_logit, labels.long())"
+
+
 ## Datasets  
 For Beer Reviews, you should first obtain authorization for this dataset from the original author.
  

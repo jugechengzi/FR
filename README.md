@@ -3,6 +3,8 @@ This repo contains Pytorch implementation of [Folded Rationalization with a Unif
 
 We would be grateful if you would star this repo before cloning it.
 
+You can also refer to our team's other complementary work in this series：[FR (NeurIPS2022)](https://arxiv.org/abs/2209.08285), [DR (KDD 2023)](https://dl.acm.org/doi/abs/10.1145/3580305.3599299), [MGR (ACL 2023)](https://arxiv.org/abs/2305.04492), [MCD (NeurIPS 2023)](https://arxiv.org/abs/2309.13391), [DAR (ICDE 2024)](https://arxiv.org/abs/2312.04103).
+
 ## Tips for building your own method with our code
 
 We have provided some tips for you to better understand our code and build your own method on top of it: [tips](https://github.com/jugechengzi/FR/blob/main/tips.pdf). If you're still having trouble reproducing your code after reading these tips, I'd be happy to set up a video conference to help you.

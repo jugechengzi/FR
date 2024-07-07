@@ -1,7 +1,7 @@
 # FR: Folded Rationalization with a Unified Encoder  
 This repo contains Pytorch implementation of [Folded Rationalization with a Unified Encoder (FR, NeurIPS2022)](https://arxiv.org/abs/2209.08285).   
 
-We find that a recent paper called [SSR](https://arxiv.org/abs/2403.07955) has taken our FR as a backbone. Congratulations on the great work of Yue et.al. and thanks for the citation.
+I am happy to say that a recent paper called [SSR](https://arxiv.org/abs/2403.07955) has taken our FR as a backbone. Congratulations on the great work of Yue et.al. and thanks for their citation. I also find that several recent works, such as [GR](https://ojs.aaai.org/index.php/AAAI/article/download/29783/31352) and [YOFO](https://arxiv.org/abs/2311.02344), have designed their experiments based on our open source code. Congratulations to all of them and I am really happy to know that my work is helping others.
 
 We would be grateful if you would star this repo before cloning it.
 

@@ -207,7 +207,7 @@ f1_best_dev = [0]
 best_dev_epoch = [0]
 acc_best_dev = [0]
 
-<-------
+"""
 for epoch in range(args.epochs):
 
     start = time.time()
@@ -268,7 +268,8 @@ for epoch in range(args.epochs):
         # print("Rationale")
         # validate_rationales(model, annotation_loader, device,(writer,epoch))
 torch.save(model,'./trained_models/beer_{}.pkl'.format(args.aspect))
----------->
+"""
+
 for epoch in range(args.epochs):
 
     start = time.time()

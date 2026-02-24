@@ -206,6 +206,8 @@ best_all = 0
 f1_best_dev = [0]
 best_dev_epoch = [0]
 acc_best_dev = [0]
+
+<-------
 for epoch in range(args.epochs):
 
     start = time.time()
@@ -265,5 +267,75 @@ for epoch in range(args.epochs):
         # validate_annotation_sentence(model, annotation_loader, device)
         # print("Rationale")
         # validate_rationales(model, annotation_loader, device,(writer,epoch))
+torch.save(model,'./trained_models/beer_{}.pkl'.format(args.aspect))
+---------->
+for epoch in range(args.epochs):
+
+    start = time.time()
+    model.train()
+    precision, recall, f1_score, accuracy = train_share(model, optimizer, train_loader, device, args,(writer,epoch))
+    end = time.time()
+    print('\nTrain time for epoch #%d : %f second' % (epoch, end - start))
+    print("traning epoch:{} recall:{:.4f} precision:{:.4f} f1-score:{:.4f} accuracy:{:.4f}".format(epoch, recall,
+                                                                                                   precision, f1_score,
+                                                                                                   accuracy))
+    writer.add_scalar('train_acc',accuracy,epoch)
+    writer.add_scalar('time',time.time()-strat_time,epoch)
+    TP = 0
+    TN = 0
+    FN = 0
+    FP = 0
+    model.eval()
+    print("Validate")
+    with torch.no_grad():
+        for (batch, (inputs, masks, labels)) in enumerate(dev_loader):
+            inputs, masks, labels = inputs.to(device), masks.to(device), labels.to(device)
+            _, logits = model(inputs, masks)
+            # pdb.set_trace()
+            logits = torch.softmax(logits, dim=-1)
+            _, pred = torch.max(logits, axis=-1)
+            # compute accuarcy
+            # TP predict 和 label 同时为1
+            TP += ((pred == 1) & (labels == 1)).cpu().sum()
+            # TN predict 和 label 同时为0
+            TN += ((pred == 0) & (labels == 0)).cpu().sum()
+            # FN predict 0 label 1
+            FN += ((pred == 0) & (labels == 1)).cpu().sum()
+            # FP predict 1 label 0
+            FP += ((pred == 1) & (labels == 0)).cpu().sum()
+        precision = TP / (TP + FP)
+        recall = TP / (TP + FN)
+        f1_score = 2 * precision * recall / (recall + precision)
+        accuracy = (TP + TN) / (TP + TN + FP + FN)
+        print("dev epoch:{} recall:{:.4f} precision:{:.4f} f1-score:{:.4f} accuracy:{:.4f}".format(epoch, recall,
+                                                                                                   precision,
+                                                                                                   f1_score, accuracy))
+
+        writer.add_scalar('dev_acc',accuracy,epoch)
+        # print("Validate Sentence")
+        # validate_dev_sentence(model, dev_loader, device,(writer,epoch))
+        print("Annotation")
+        annotation_results = validate_share(model, annotation_loader, device)
+        print(
+            "The annotation performance: sparsity: %.4f, precision: %.4f, recall: %.4f, f1: %.4f"
+            % (100 * annotation_results[0], 100 * annotation_results[1],
+               100 * annotation_results[2], 100 * annotation_results[3]))
+        writer.add_scalar('f1',100 * annotation_results[3],epoch)
+        writer.add_scalar('sparsity',100 * annotation_results[0],epoch)
+        writer.add_scalar('p', 100 * annotation_results[1], epoch)
+        writer.add_scalar('r', 100 * annotation_results[2], epoch)
+        # print("Annotation Sentence")
+        # validate_annotation_sentence(model, annotation_loader, device)
+        # print("Rationale")
+        # validate_rationales(model, annotation_loader, device,(writer,epoch))
+        if accuracy>acc_best_dev[-1]:
+            acc_best_dev.append(accuracy)
+            best_dev_epoch.append(epoch)
+            f1_best_dev.append(annotation_results[3])
+        if best_all<annotation_results[3]:
+            best_all=annotation_results[3]
+    args.tau[0]*=args.taudecay
+print(best_all)
+print('best_dev_epoch={}'.format(best_dev_epoch[-1]))
 torch.save(model,'./trained_models/beer_{}.pkl'.format(args.aspect))
 
